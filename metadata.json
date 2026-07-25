@@ -1,0 +1,6 @@
+{
+  "name": "Boda Mónica & Eleazar",
+  "description": "Invitación web de boda exclusiva y elegante para Mónica Sánchez y Eleazar Serrano. Con cuenta regresiva, itinerario, hospedaje, galería, mesa de regalos e información de invitados por WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
