@@ -1,9 +1,15 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-script: 'Great Vibes', cursive;
+}
+
 @layer base {
   :root {
     --font-serif: 'Cormorant Garamond', Georgia, serif;
-    --font-sans: 'Poppins', sans-serif;
+    --font-sans: 'Montserrat', sans-serif;
     --font-script: 'Great Vibes', cursive;
   }
 

@@ -37,9 +37,11 @@ export const Footer: React.FC<FooterProps> = ({ data }) => {
 
         <FloralDivider variant="simple" className="my-4" />
 
-        <p className="font-serif text-3xl sm:text-4xl text-[#B08D57] font-light my-2 tracking-wide">
+        <p className="font-serif text-lg sm:text-xl text-[#B08D57] font-light my-2 tracking-wide">
           Con cariño,<br />
-          {data.general.brideName.split(' ')[0]} &amp; {data.general.groomName.split(' ')[0]}
+          <span className="font-script text-3xl sm:text-4xl block mt-1">
+            {data.general.brideName.split(' ')[0]} &amp; {data.general.groomName.split(' ')[0]}
+          </span>
         </p>
 
         <p className="text-xs tracking-widest text-stone-400 uppercase mt-4">

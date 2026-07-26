@@ -73,14 +73,14 @@ export const Hero: React.FC<HeroProps> = ({ data }) => {
         <div className="flex flex-col items-end text-right pb-10 sm:pb-16 self-end w-full">
           <div className="max-w-md w-full flex flex-col items-end text-right">
             {/* Bride & Groom Names */}
-            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal tracking-tight text-white drop-shadow-xl mb-1 leading-tight">
-              <span className="block font-serif text-[#FDFBF7]">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-normal tracking-wide text-white drop-shadow-xl mb-1 leading-tight">
+              <span className="block font-script text-[#FDFBF7]">
                 {data.general.brideName}
               </span>
               <span className="block font-script text-2xl sm:text-4xl text-[#B08D57] my-0.5 sm:my-1 italic">
                 &amp;
               </span>
-              <span className="block font-serif text-[#FDFBF7]">
+              <span className="block font-script text-[#FDFBF7]">
                 {data.general.groomName}
               </span>
             </h1>

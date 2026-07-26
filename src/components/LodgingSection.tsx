@@ -5,14 +5,6 @@ import {
   MapPin,
   X,
   ChevronRight,
-  Sparkles,
-  Zap,
-  Car,
-  Ship,
-  Footprints,
-  Compass,
-  Grid,
-  Moon,
   Info,
   CheckCircle2,
   Globe,
@@ -30,27 +22,6 @@ export const LodgingSection: React.FC<LodgingSectionProps> = ({ data }) => {
   const volcanicPark = data.lodging.options.volcanicPark;
   const hotelMagnolia = data.lodging.options.hotelMagnolia;
   const casonaDelCarmen = data.lodging.options.casonaDelCarmen;
-
-  const getActivityIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'Zap':
-        return <Zap className="w-3.5 h-3.5 text-[#C5A059]" />;
-      case 'Car':
-        return <Car className="w-3.5 h-3.5 text-[#C5A059]" />;
-      case 'Ship':
-        return <Ship className="w-3.5 h-3.5 text-[#C5A059]" />;
-      case 'Footprints':
-        return <Footprints className="w-3.5 h-3.5 text-[#C5A059]" />;
-      case 'Compass':
-        return <Compass className="w-3.5 h-3.5 text-[#C5A059]" />;
-      case 'Grid':
-        return <Grid className="w-3.5 h-3.5 text-[#C5A059]" />;
-      case 'Moon':
-        return <Moon className="w-3.5 h-3.5 text-[#C5A059]" />;
-      default:
-        return <Sparkles className="w-3.5 h-3.5 text-[#C5A059]" />;
-    }
-  };
 
   return (
     <section id="hospedaje" className="py-20 px-4 linen-bg relative overflow-hidden">
@@ -120,7 +91,7 @@ export const LodgingSection: React.FC<LodgingSectionProps> = ({ data }) => {
           </div>
 
           {/* Volcanic Park Accommodation Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {volcanicPark.cards.map((card) => (
               <div
                 key={card.id}
@@ -153,40 +124,6 @@ export const LodgingSection: React.FC<LodgingSectionProps> = ({ data }) => {
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* Volcanic Park Activities Sub-Section */}
-          <div className="mt-4 glass rounded-xl p-3 sm:p-4 border border-[#E8E2D9] bg-white/80">
-            <div className="text-center max-w-lg mx-auto mb-2.5">
-              <span className="text-[9px] uppercase tracking-widest gold-text font-bold">
-                Entretenimiento en la naturaleza
-              </span>
-              <h4 className="font-serif text-base sm:text-lg font-light text-stone-800 mt-0.5">
-                Actividades en Volcanic Park
-              </h4>
-              <p className="text-[#6B6B6B] text-[10px] font-light mt-0.5">
-                Para que disfruten de un fin de semana completo lleno de aventura.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5 sm:gap-2">
-              {volcanicPark.activities.map((act) => (
-                <div
-                  key={act.name}
-                  className="bg-[#FDFBF7] px-2 py-1.5 rounded-lg border border-[#E8E2D9] flex flex-col items-center text-center gap-0.5 hover:border-[#B08D57] transition-colors"
-                >
-                  <div className="p-1 rounded-full bg-[#B08D57]/10">
-                    {getActivityIcon(act.icon)}
-                  </div>
-                  <span className="font-serif font-medium text-stone-800 text-[11px] sm:text-xs">
-                    {act.name}
-                  </span>
-                  <span className="text-[9px] sm:text-[9.5px] text-[#8B8273] font-light leading-tight">
-                    {act.description}
-                  </span>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 

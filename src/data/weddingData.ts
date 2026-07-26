@@ -314,40 +314,6 @@ export const initialWeddingData: WeddingData = {
               "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80"
             ],
             priceInfo: "Cabañas con capacidad de 2 a 6 personas."
-          },
-          {
-            id: "glamping",
-            name: "Glamping",
-            shortDescription: "Campamento de lujo con cama, baño privado y estilo safari.",
-            fullDescription: "Disfruta de la libertad de acampar sin perder la comodidad de un hotel boutique de primer nivel.",
-            image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80",
-            photos: [
-              "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=800&q=80",
-              "https://images.unsplash.com/photo-1499696010180-025ef6e1a8f9?auto=format&fit=crop&w=800&q=80"
-            ],
-            priceInfo: "Tiendas luxury glamping para 2 personas."
-          },
-          {
-            id: "cupulas",
-            name: "Cúpulas (Domo Geodésico)",
-            shortDescription: "Domos futuristas inmersos en el bosque de pinos.",
-            fullDescription: "Las cúpulas panorámicas permiten integrarse totalmente con la naturaleza con un diseño arquitectónico romántico y envolvente.",
-            image: "https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80",
-            photos: [
-              "https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80"
-            ],
-            priceInfo: "Diseñado especialmente para parejas."
-          },
-          {
-            id: "camping",
-            name: "Camping",
-            shortDescription: "Área de acampar al aire libre bajo las estrellas.",
-            fullDescription: "Zona segura equipada para instalar tu propia tienda de campaña, rodeada de bosque, sanitarios y áreas de fogata.",
-            image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80",
-            photos: [
-              "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=800&q=80"
-            ],
-            priceInfo: "Espacio de acampado por persona o por tienda."
           }
         ],
         activities: [
