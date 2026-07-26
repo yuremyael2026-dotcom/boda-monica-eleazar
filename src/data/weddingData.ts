@@ -1,4 +1,3 @@
-import heroCoverImg from '../assets/images/hero_whatsapp_photo.jpg';
 import galeria1 from '../assets/images/Galeria/galeria1.jpg';
 import galeria2 from '../assets/images/Galeria/galeria2.jpg';
 import galeria3 from '../assets/images/Galeria/galeria3.jpg';
@@ -12,6 +11,7 @@ import loveMusic from "../assets/audio/love.mp3";
 import hotelMagnolia from "../assets/images/hotel-magnolia.jpg";
 import haciendaImage from "../assets/images/hacienda.jpeg";
 import hotelAstro from "../assets/images/hotel-astro.jpeg";
+import casonaImage from "../assets/images/casona.jpg";
 export interface WeddingData {
   general: {
     brideName: string;
@@ -72,6 +72,9 @@ export interface WeddingData {
       volcanicPark: {
         name: string;
         description: string;
+        phone?: string;
+        phoneRaw?: string;
+        reservationUrl?: string;
         mainImage: string;
         modalPhotos: string[];
         cards: Array<{
@@ -90,6 +93,15 @@ export interface WeddingData {
         }>;
       };
       hotelMagnolia: {
+        name: string;
+        description: string;
+        image: string;
+        phone: string;
+        phoneRaw: string;
+        address: string;
+        mapUrl: string;
+      };
+      casonaDelCarmen?: {
         name: string;
         description: string;
         image: string;
@@ -135,14 +147,14 @@ export const initialWeddingData: WeddingData = {
     dateDisplay: "14 de noviembre de 2026",
     timeDisplay: "1:00 PM",
     locationCity: "Ciudad Serdán, Puebla",
-    heroImage: heroCoverImg,
+    heroImage: footer,
     footerImage: footer,
     welcomeMessage: "Con enorme alegría queremos compartir con ustedes uno de los días más importantes de nuestras vidas. Su presencia hará que este momento sea aún más especial y esperamos contar con ustedes para celebrar juntos nuestro matrimonio.",
     closingMessage: "Gracias por formar parte de este momento tan importante en nuestras vidas.\n\nCon cariño,\nMónica & Eleazar"
   },
   ceremony: {
     title: "Ceremonia Religiosa",
-    placeName: "Parroquia de San Andrés Apóstol",
+    placeName: "Parroquia de San Andrés Apóstol (Padre Jesús de las Tres Caídas)",
     dateDisplay: "14 de noviembre de 2026",
     timeDisplay: "1:00 PM",
     address: "Centro, Ciudad Serdán, Puebla",
@@ -162,7 +174,7 @@ export const initialWeddingData: WeddingData = {
     {
       time: "1:00 – 2:00 PM",
       title: "Misa",
-      description: "Ceremonia religiosa en la Parroquia de San Andrés Apóstol.",
+      description: "Ceremonia religiosa en la Parroquia de San Andrés Apóstol (Padre Jesús de las Tres Caídas).",
       icon: "Church"
     },
     {
@@ -214,6 +226,10 @@ export const initialWeddingData: WeddingData = {
       icon: "PartyPopper"
     }
   ],
+  parents: {
+    brideParents: ["Óscar Sánchez", "Patricia Barrientos"],
+    groomParents: ["† Manuel Serrano", "Teresa Juárez"]
+  },
   godparents: [
     {
       role: "Padrinos de Honor",
@@ -265,6 +281,9 @@ export const initialWeddingData: WeddingData = {
       volcanicPark: {
         name: "Volcanic Park",
         description: "Parque temático y complejo de ecoturismo ubicado cerca de la recepción. Ofrece experiencias únicas de hospedaje en la naturaleza con atracciones para toda la familia.",
+        phone: "222 688 4767",
+        phoneRaw: "2226884767",
+        reservationUrl: "https://volcanicpark.com.mx/",
         mainImage: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
         modalPhotos: [
           "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80",
@@ -349,20 +368,29 @@ export const initialWeddingData: WeddingData = {
         phoneRaw: "5513976749",
         address: "San Francisco Cuautlancingo, Puebla",
         mapUrl: "https://maps.google.com/?q=Hotel+La+Magnolia+Ciudad+Serdan+Puebla"
+      },
+      casonaDelCarmen: {
+        name: "Hotel La Casona del Carmen",
+        description: "Hotel boutique con encanto colonial en Ciudad Serdán, caracterizado por sus confortables habitaciones, atención personalizada y ambiente sereno.",
+        image: casonaImage,
+        phone: "245 109 1194",
+        phoneRaw: "2451091194",
+        address: "Centro, Ciudad Serdán, Puebla",
+        mapUrl: "https://maps.google.com/?q=Hotel+La+Casona+del+Carmen+Ciudad+Serdan+Puebla"
       }
     }
   },
   giftRegistry: {
     title: "Mesa de Regalos",
-    subtitle: "El mejor regalo será contar con su presencia. Si desean tener un detalle con nosotros, ponemos a su disposición nuestra mesa de regalos.",
-    qrCodeUrl: "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https%3A%2F%2Fwww.liverpool.com.mx%2Ftienda%2Fgiftregistry&color=5A6B53",
+    subtitle: "El mejor regalo será contar con su presencia. Si desean tener un detalle con nosotros, ponemos a su disposición nuestra mesa de regalos en Sears.",
+    qrCodeUrl: "https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https%3A%2F%2Fwww.sears.com.mx%2FMesa-de-Regalos%2F255816%2Fte-invito-a-mi-boda-monica-alejandra-eleazar&color=5A6B53",
     bankInfo: {
       bankName: "BBVA Bancomer",
       holderName: "Mónica Sánchez / Eleazar Serrano",
       clabe: "012 650 015 892 341 092",
       accountNumber: "158 923 4109"
     },
-    externalRegistryUrl: "https://www.liverpool.com.mx/tienda/giftregistry"
+    externalRegistryUrl: "https://www.sears.com.mx/Mesa-de-Regalos/255816/te-invito-a-mi-boda-monica-alejandra-eleazar"
   },
   rsvp: {
     title: "Nos encantará saber que nos acompañarán",

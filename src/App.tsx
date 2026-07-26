@@ -14,7 +14,6 @@ import { RSVPForm } from './components/RSVPForm';
 import { Footer } from './components/Footer';
 import { MusicPlayer } from './components/MusicPlayer';
 import { AdminConfigModal } from './components/AdminConfigModal';
-import { PdfExportModal } from './components/PdfExportModal';
 import { WelcomeCover } from './components/WelcomeCover';
 
 export default function App() {
@@ -25,11 +24,13 @@ export default function App() {
         const parsed = JSON.parse(saved);
         return {
           ...parsed,
-          ceremony: { ...parsed.ceremony, image: initialWeddingData.ceremony.image },
+          ceremony: { ...parsed.ceremony, placeName: initialWeddingData.ceremony.placeName, image: initialWeddingData.ceremony.image },
           reception: { ...parsed.reception, image: initialWeddingData.reception.image },
           gallery: initialWeddingData.gallery,
           audio: initialWeddingData.audio,
           lodging: initialWeddingData.lodging,
+          giftRegistry: initialWeddingData.giftRegistry,
+          parents: initialWeddingData.parents,
         };
       }
     } catch (e) {
@@ -40,7 +41,6 @@ export default function App() {
 
   const [isPlayingMusic, setIsPlayingMusic] = useState(false);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
-  const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
 
   const handleUpdateData = (newData: WeddingData) => {
     setWeddingData(newData);
@@ -68,7 +68,6 @@ export default function App() {
         isPlayingMusic={isPlayingMusic}
         onToggleMusic={() => setIsPlayingMusic(!isPlayingMusic)}
         onOpenAdmin={() => setIsAdminOpen(true)}
-        onOpenPdfModal={() => setIsPdfModalOpen(true)}
       />
 
       {/* Main Content Sections */}
@@ -107,7 +106,6 @@ export default function App() {
       {/* Pie de Página */}
       <Footer
         data={weddingData}
-        onOpenPdfModal={() => setIsPdfModalOpen(true)}
       />
 
       {/* Floating Audio Player */}
@@ -124,13 +122,6 @@ export default function App() {
         data={weddingData}
         onUpdateData={handleUpdateData}
         onResetData={handleResetData}
-      />
-
-      {/* Printable PDF Export Modal */}
-      <PdfExportModal
-        isOpen={isPdfModalOpen}
-        onClose={() => setIsPdfModalOpen(false)}
-        data={weddingData}
       />
 
       {/* Pantalla de Bienvenida Inicial / Cover */}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Sparkles, UserCheck } from 'lucide-react';
+import { Heart, Sparkles, UserCheck, Users } from 'lucide-react';
 import { WeddingData } from '../data/weddingData';
 import { FloralDivider } from './FloralDivider';
 
@@ -11,6 +11,64 @@ export const Godparents: React.FC<GodparentsProps> = ({ data }) => {
   return (
     <section className="py-20 px-4 linen-bg relative">
       <div className="max-w-4xl mx-auto text-center relative z-10">
+        
+        {/* Nuestros Padres Section */}
+        {data.parents && (
+          <div className="mb-16">
+            <div className="inline-flex items-center gap-2 text-[#B08D57] text-xs uppercase tracking-widest font-semibold mb-2">
+              <Users className="w-4 h-4 text-[#B08D57]" />
+              <span>Con la bendición de nuestros padres</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-5xl font-light text-stone-800 mb-3">
+              Nuestros Padres
+            </h2>
+            <p className="text-[#6B6B6B] text-sm sm:text-base font-light max-w-lg mx-auto">
+              Agradecemos el amor incondicional, guía y apoyo de nuestros amados padres en este nuevo camino.
+            </p>
+
+            <FloralDivider variant="ornate" className="my-6" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mt-8">
+              {data.parents.brideParents && data.parents.brideParents.length > 0 && (
+                <div className="glass rounded-3xl p-8 shadow-sm border border-[#E8E2D9] relative overflow-hidden bg-white/80">
+                  <span className="text-xs font-mono uppercase tracking-widest gold-text font-bold block mb-3">
+                    Padres de la Novia
+                  </span>
+                  <div className="space-y-1.5">
+                    {data.parents.brideParents.map((parent, idx) => (
+                      <p
+                        key={idx}
+                        className="font-serif text-xl sm:text-2xl font-normal text-stone-800 tracking-wide"
+                      >
+                        {parent}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {data.parents.groomParents && data.parents.groomParents.length > 0 && (
+                <div className="glass rounded-3xl p-8 shadow-sm border border-[#E8E2D9] relative overflow-hidden bg-white/80">
+                  <span className="text-xs font-mono uppercase tracking-widest gold-text font-bold block mb-3">
+                    Padres del Novio
+                  </span>
+                  <div className="space-y-1.5">
+                    {data.parents.groomParents.map((parent, idx) => (
+                      <p
+                        key={idx}
+                        className="font-serif text-xl sm:text-2xl font-normal text-stone-800 tracking-wide"
+                      >
+                        {parent}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Nuestros Padrinos Section */}
         <div className="inline-flex items-center gap-2 text-[#B08D57] text-xs uppercase tracking-widest font-semibold mb-2">
           <UserCheck className="w-4 h-4 text-[#B08D57]" />
           <span>Agradecimiento Especial</span>

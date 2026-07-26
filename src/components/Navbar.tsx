@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Menu, X, Settings, Heart, Download } from 'lucide-react';
+import { Volume2, VolumeX, Menu, X, Settings, Heart } from 'lucide-react';
 import { WeddingData } from '../data/weddingData';
 
 interface NavbarProps {
@@ -7,7 +7,6 @@ interface NavbarProps {
   isPlayingMusic: boolean;
   onToggleMusic: () => void;
   onOpenAdmin: () => void;
-  onOpenPdfModal: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -15,7 +14,6 @@ export const Navbar: React.FC<NavbarProps> = ({
   isPlayingMusic,
   onToggleMusic,
   onOpenAdmin,
-  onOpenPdfModal,
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -78,23 +76,8 @@ export const Navbar: React.FC<NavbarProps> = ({
           ))}
         </nav>
 
-        {/* Controls: Music + PDF Download + Admin Panel */}
+        {/* Controls: Music + Admin Panel */}
         <div className="flex items-center gap-2 sm:gap-3">
-          {/* Download PDF Button */}
-          <button
-            onClick={onOpenPdfModal}
-            title="Descargar Invitación en PDF"
-            className={`px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5 text-xs font-medium border shadow-xs ${
-              scrolled
-                ? 'bg-[#B08D57] hover:bg-[#9A7232] text-white border-[#B08D57]'
-                : 'bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm'
-            }`}
-          >
-            <Download className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Descargar PDF</span>
-            <span className="sm:hidden">PDF</span>
-          </button>
-
           <button
             onClick={onToggleMusic}
             title={isPlayingMusic ? 'Pausar música' : 'Reproducir música'}
@@ -156,17 +139,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 {link.name}
               </a>
             ))}
-
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenPdfModal();
-              }}
-              className="mt-2 w-full py-3 px-4 rounded-full bg-[#B08D57] text-white font-medium text-xs tracking-wider uppercase flex items-center justify-center gap-2 shadow"
-            >
-              <Download className="w-4 h-4" />
-              <span>Descargar Invitación PDF</span>
-            </button>
           </div>
         </div>
       )}

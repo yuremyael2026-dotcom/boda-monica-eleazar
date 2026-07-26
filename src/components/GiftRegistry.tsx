@@ -33,7 +33,7 @@ export const GiftRegistry: React.FC<GiftRegistryProps> = ({ data }) => {
           <div className="glass rounded-3xl p-8 border border-[#E8E2D9] shadow-sm flex flex-col items-center justify-center bg-white/80 w-full">
             <div className="p-3 bg-white rounded-2xl shadow-inner border border-[#E8E2D9] mb-4 inline-block">
               <img
-                src={qrSears}
+                src={giftInfo.qrCodeUrl || qrSears}
                 alt="Código QR Mesa de Regalos"
                 className="w-48 h-48 object-contain"
               />

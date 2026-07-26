@@ -1,14 +1,13 @@
 import React from 'react';
-import { Heart, Download } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { WeddingData } from '../data/weddingData';
 import { FloralDivider } from './FloralDivider';
 
 interface FooterProps {
   data: WeddingData;
-  onOpenPdfModal?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ data, onOpenPdfModal }) => {
+export const Footer: React.FC<FooterProps> = ({ data }) => {
   return (
     <footer className="relative bg-stone-900 text-white pt-20 pb-12 px-4 overflow-hidden border-t border-[#B08D57]/20">
       {/* Background Subtle Photo Vignette */}
@@ -46,18 +45,6 @@ export const Footer: React.FC<FooterProps> = ({ data, onOpenPdfModal }) => {
         <p className="text-xs tracking-widest text-stone-400 uppercase mt-4">
           {data.general.dateDisplay} • {data.general.locationCity}
         </p>
-
-        {onOpenPdfModal && (
-          <div className="mt-8">
-            <button
-              onClick={onOpenPdfModal}
-              className="px-6 py-3 rounded-full bg-[#B08D57] hover:bg-[#9A7232] text-white text-xs uppercase tracking-widest font-medium transition-all flex items-center gap-2 shadow-lg border border-white/20"
-            >
-              <Download className="w-4 h-4 text-white" />
-              <span>Descargar Invitación PDF</span>
-            </button>
-          </div>
-        )}
 
         <div className="mt-12 pt-8 border-t border-stone-800/80 w-full flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
           <p>© 2026 {data.general.coupleTitle}. Todos los derechos reservados.</p>
