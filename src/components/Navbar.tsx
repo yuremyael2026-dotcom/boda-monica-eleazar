@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, Menu, X, Settings, Heart } from 'lucide-react';
+import { Volume2, VolumeX, Menu, X, Heart } from 'lucide-react';
 import { WeddingData } from '../data/weddingData';
 
 interface NavbarProps {
   data: WeddingData;
   isPlayingMusic: boolean;
   onToggleMusic: () => void;
-  onOpenAdmin: () => void;
+  onOpenAdmin?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   data,
   isPlayingMusic,
   onToggleMusic,
-  onOpenAdmin,
 }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -98,19 +97,6 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span className="hidden sm:inline">Música</span>
               </>
             )}
-          </button>
-
-          {/* Admin Config Button */}
-          <button
-            onClick={onOpenAdmin}
-            title="Panel de Configuración de la Boda"
-            className={`p-2 rounded-full transition-all border ${
-              scrolled
-                ? 'bg-white/80 hover:bg-[#B08D57]/10 text-stone-600 border-[#E8E2D9]'
-                : 'bg-white/20 hover:bg-white/30 text-white border-white/30 backdrop-blur-sm'
-            }`}
-          >
-            <Settings className="w-4 h-4" />
           </button>
 
           {/* Mobile Menu Button */}
